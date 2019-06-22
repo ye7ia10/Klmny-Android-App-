@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Settings">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_image"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="45dp"
+        android:src="@drawable/profile_image"
+        app:civ_border_width="5dp"
+        app:civ_border_color="@color/colorPrimaryDark"/>
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/UserNameSet"
+        android:layout_below="@+id/profile_image"
+        android:hint="UserName"
+        android:textAlignment="center"
+        android:drawableStart="@drawable/edit_profile"
+        android:padding="6dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimaryDark"
+        android:inputType="textMultiLine"
+        android:background="@drawable/edittext"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/StatusSet"
+        android:layout_below="@+id/UserNameSet"
+        android:hint="hey , I am here"
+        android:textAlignment="center"
+        android:drawableStart="@drawable/edit_status"
+        android:padding="6dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimaryDark"
+        android:inputType="textMultiLine"
+        android:background="@drawable/edittext"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/UpdateSett"
+        android:layout_below="@+id/StatusSet"
+        android:textAlignment="center"
+        android:padding="6dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="20dp"
+        android:textStyle="bold"
+        android:text="Update"
+        android:textSize="20sp"
+        android:textColor="@android:color/white"
+        android:inputType="textMultiLine"
+        android:background="@drawable/button" />
+
+</RelativeLayout>

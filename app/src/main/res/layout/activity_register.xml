@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Register">
+
+    <ImageView
+        android:id="@+id/regPhoto"
+        android:layout_width="match_parent"
+        android:layout_height="256dp"
+        android:src="@drawable/signup_photo"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:scaleType="fitCenter"/>
+
+
+    <EditText
+        android:id="@+id/emailReg"
+        android:layout_below="@+id/regPhoto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:hint="Email"
+        android:drawableStart="@drawable/email"
+        android:layout_alignParentStart="true"
+        android:inputType="textEmailAddress"
+        android:background="@drawable/edittext"
+        android:padding="4dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+
+        />
+
+    <EditText
+        android:id="@+id/passwordReg"
+        android:layout_below="@+id/emailReg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:hint="PassWord"
+        android:drawableStart="@drawable/password"
+        android:layout_alignParentStart="true"
+        android:inputType="textPassword"
+        android:background="@drawable/edittext"
+        android:padding="4dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        />
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/regBtn"
+        android:text="Register"
+        android:textSize="24sp"
+        android:layout_below="@id/passwordReg"
+        android:layout_marginTop="10dp"
+        android:background="@color/colorPrimary"
+        android:layout_marginLeft="17dp"
+        android:layout_marginRight="17dp"
+        android:textColor="@android:color/white"
+        android:textAllCaps="false"
+        android:padding="4dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Already Have An Account ? Login !"
+        android:id="@+id/have_Account"
+        android:layout_below="@+id/regBtn"
+        android:padding="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="19dp"
+        android:textSize="17sp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimaryDark"/>
+
+
+
+</RelativeLayout>

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "31486741491",
+    "firebase_url": "https://klmny-3210a.firebaseio.com",
+    "project_id": "klmny-3210a",
+    "storage_bucket": "klmny-3210a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:31486741491:android:296ea8cafcd7a79f",
+        "android_client_info": {
+          "package_name": "com.example.owner.klmny"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "31486741491-n26bfm6srl9skacplrb48vtt1or7o503.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.owner.klmny",
+            "certificate_hash": "70f7d8bb91f2544f87e9b510e8684ee8fb9c6373"
+          }
+        },
+        {
+          "client_id": "31486741491-hn3fos8ou53ga3814pnksgni8i9ip3su.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCV1UDTtSJF0MTnlYRlXD0XHidYgbfkLyA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "31486741491-hn3fos8ou53ga3814pnksgni8i9ip3su.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

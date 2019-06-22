@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Login">
+
+    <ScrollView
+        android:id="@+id/scrollogin"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <ImageView
+                android:id="@+id/loginPhoto"
+                android:layout_width="match_parent"
+                android:layout_height="256dp"
+                android:src="@drawable/log"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
+                android:scaleType="fitCenter"/>
+
+
+            <EditText
+                android:id="@+id/emailLogin"
+                android:layout_below="@+id/loginPhoto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:hint="Email"
+                android:drawableStart="@drawable/email"
+                android:layout_alignParentStart="true"
+                android:inputType="textEmailAddress"
+                android:background="@drawable/edittext"
+                android:padding="4dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+
+                />
+
+            <EditText
+                android:id="@+id/passwordLogin"
+                android:layout_below="@+id/emailLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:hint="PassWord"
+                android:drawableStart="@drawable/password"
+                android:layout_alignParentStart="true"
+                android:inputType="textPassword"
+                android:background="@drawable/edittext"
+                android:padding="4dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Forget Password ?"
+                android:id="@+id/forget_pass"
+                android:layout_below="@+id/passwordLogin"
+                android:padding="4dp"
+                android:layout_marginTop="4dp"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="19dp"
+                android:textSize="17sp"
+                android:textAlignment="textEnd"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimaryDark"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/lgnBtn"
+                android:text="Login"
+                android:textSize="24sp"
+                android:layout_below="@id/forget_pass"
+                android:layout_marginTop="10dp"
+                android:background="@color/colorPrimary"
+                android:layout_marginLeft="17dp"
+                android:layout_marginRight="17dp"
+                android:textColor="@android:color/white"
+                android:textAllCaps="false"
+                android:padding="4dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Need A New Account ?"
+                android:id="@+id/new_Account"
+                android:layout_below="@+id/lgnBtn"
+                android:padding="4dp"
+                android:layout_marginTop="4dp"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="19dp"
+                android:textSize="17sp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimaryDark"/>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Or you can login with "
+                android:id="@+id/or"
+                android:layout_below="@+id/new_Account"
+                android:padding="4dp"
+                android:layout_marginTop="4dp"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="19dp"
+                android:textSize="17sp"
+                android:gravity="center"
+                android:textStyle="bold"
+
+                android:textColor="@color/colorPrimaryDark"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/phoneLgn"
+                android:text="Phone"
+                android:textSize="24sp"
+                android:layout_below="@id/or"
+                android:layout_marginTop="10dp"
+                android:background="@color/colorPrimary"
+                android:layout_marginLeft="17dp"
+                android:layout_marginRight="17dp"
+                android:textColor="@android:color/white"
+                android:textAllCaps="false"
+                android:padding="4dp"
+                android:layout_marginBottom="25dp"/>
+
+        </RelativeLayout>
+
+
+    </ScrollView>
+</RelativeLayout>
