@@ -3,6 +3,9 @@
     package="com.example.owner.klmny">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -20,7 +23,16 @@
         </activity>
         <activity android:name=".Login" />
         <activity android:name=".Register" />
-        <activity android:name=".Settings"></activity>
+        <activity android:name=".Settings" />
+        <activity android:name=".GroupChat" />
+        <activity android:name=".phoneNumberAct" />
+        <activity
+            android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
+            android:theme="@style/Base.Theme.AppCompat" />
+        <activity
+            android:name=".FindFriends"
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".profileInfo"></activity>
     </application>
 
 </manifest>

@@ -20,6 +20,14 @@
     </item>
 
     <item
+        android:title="Create Group"
+        android:id="@+id/CreateGroup"
+        app:showAsAction="never"
+        >
+
+    </item>
+
+    <item
         android:title="Logout"
         android:id="@+id/logout"
         app:showAsAction="never"
