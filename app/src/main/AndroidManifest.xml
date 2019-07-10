@@ -32,7 +32,9 @@
         <activity
             android:name=".FindFriends"
             android:parentActivityName=".MainActivity" />
-        <activity android:name=".profileInfo"></activity>
+        <activity android:name=".profileInfo" />
+        <activity android:name=".ChatActivity"
+            android:parentActivityName=".MainActivity"></activity>
     </application>
 
 </manifest>
