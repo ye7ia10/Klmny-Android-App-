@@ -19,6 +19,9 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.iid.FirebaseInstanceId;
 
 public class Login extends AppCompatActivity {
 
@@ -30,6 +33,7 @@ public class Login extends AppCompatActivity {
     private Button LoginMail, LoginPhone;
     private FirebaseAuth firebaseAuth;
     private ProgressDialog dialog;
+    private DatabaseReference reference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +42,7 @@ public class Login extends AppCompatActivity {
 
         firebaseAuth = FirebaseAuth.getInstance();
 
+        reference = FirebaseDatabase.getInstance().getReference().child("Users");
 
         scrollView = (ScrollView) findViewById(R.id.scrollogin);
         imageView = (ImageView) findViewById(R.id.loginPhoto);
@@ -96,12 +101,22 @@ public class Login extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()){
-                                dialog.dismiss();
-                                Toast.makeText(Login.this, "You logged in Successfully ", Toast.LENGTH_LONG).show();
-                                Intent intent = new Intent(Login.this, MainActivity.class);
-                                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                                startActivity(intent);
-                                finish();
+
+                                String CuurentId = firebaseAuth.getCurrentUser().getUid();
+                                String deviceToken = FirebaseInstanceId.getInstance().getToken();
+                                reference.child(CuurentId).child("token")
+                                        .setValue(deviceToken).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<Void> task) {
+                                        dialog.dismiss();
+                                        Toast.makeText(Login.this, "You logged in Successfully ", Toast.LENGTH_LONG).show();
+                                        Intent intent = new Intent(Login.this, MainActivity.class);
+                                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                        startActivity(intent);
+                                        finish();
+                                    }
+                                });
+
                             }else {
                                 dialog.dismiss();
                                 String message = task.getException().toString();

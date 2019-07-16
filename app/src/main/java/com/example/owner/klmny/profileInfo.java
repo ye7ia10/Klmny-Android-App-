@@ -17,6 +17,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
+import java.util.HashMap;
+
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class profileInfo extends AppCompatActivity {
@@ -25,7 +27,7 @@ public class profileInfo extends AppCompatActivity {
     private TextView stat, namm;
     private CircleImageView imageView;
     private Button buttonSend, decline;
-    private DatabaseReference reference, chatRef, contacts;
+    private DatabaseReference reference, chatRef, contacts, nots;
     private String CurrentID;
     private FirebaseAuth auth;
     private String currentStl;
@@ -42,6 +44,8 @@ public class profileInfo extends AppCompatActivity {
         reference = FirebaseDatabase.getInstance().getReference().child("Users");
         chatRef = FirebaseDatabase.getInstance().getReference().child("Chat Request");
         contacts = FirebaseDatabase.getInstance().getReference().child("Contacts");
+        nots = FirebaseDatabase.getInstance().getReference().child("Notis");
+
 
         namm = (TextView) findViewById(R.id.profName);
         stat = (TextView) findViewById(R.id.profStat);
@@ -275,9 +279,21 @@ public class profileInfo extends AppCompatActivity {
                                         @Override
                                         public void onComplete(@NonNull Task<Void> task) {
                                             if (task.isSuccessful()){
-                                                currentStl = "requested";
-                                                buttonSend.setEnabled(true);
-                                                buttonSend.setText("Cancel Chat Request");
+
+                                                HashMap<String, String> map = new HashMap<>();
+                                                map.put("from", CurrentID);
+                                                map.put("type", "request");
+                                                nots.child(user_name_id).push()
+                                                        .setValue(map).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                    @Override
+                                                    public void onComplete(@NonNull Task<Void> task) {
+                                                            if (task.isSuccessful()){
+                                                                currentStl = "requested";
+                                                                buttonSend.setEnabled(true);
+                                                                buttonSend.setText("Cancel Chat Request");
+                                                            }
+                                                    }
+                                                });
                                             }
                                         }
                                     });
